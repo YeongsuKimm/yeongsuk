@@ -3,7 +3,7 @@
 permalink: /blogs
 title: Blogs
 ---
-<h1>Unit 1: Build a Lab Notebook</h1>
+<!-- <h1>Unit 1: Build a Lab Notebook</h1>
 <table>
     <tr>
         <th>Week</th>
@@ -36,7 +36,7 @@ title: Blogs
         <td></td>
     </tr>
 </table>
-<br><br><br><br>
+<br><br><br><br> -->
 <h1>Fixed Errors</h1>
 <ul>
     <li style="font-size:15px">
