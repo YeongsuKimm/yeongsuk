@@ -204,7 +204,7 @@ course: Games & Projects
 <body>
     <div class="game-container">
         <h1>Tic Tac Toe</h1>
-        <div class="container" id="board" style="padding-left:170px">
+        <div class="container" id="board">
             <div class="cell" onclick="makeMove(0)"></div>
             <div class="cell" onclick="makeMove(1)"></div>
             <div class="cell" onclick="makeMove(2)"></div>
