@@ -62,6 +62,7 @@ title: Blogs
 </ul>
 <h1>Ongoing Errors</h1>
 <ul>
+    <li>The github page leads to incorrect base url</li>
 </ul>
 
 <!-- 
