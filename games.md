@@ -1,9 +1,18 @@
 ---
 # layout: schedule
-title: Computer Science and Software Engineering
 units: "1,2,3,4,5,6"
 course: Games & Projects
+# toc: true
+# comments: false
+layout: post
+title: Games & Projects
+# description: Games & Projects
+type: tangibles
+courses: { compsci: {week: 0} }
 ---
+<head>
+    <link rel="stylesheet" href="theme.css">
+</head>
 <h1>Week 0 Projects</h1>
 <div class="centered">
     <h1>The Notepad</h1>

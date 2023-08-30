@@ -3,6 +3,11 @@
 permalink: /blogs
 title: Blogs
 ---
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="theme.css"> -->
+    </head>
+</html>
 <!-- <h1>Unit 1: Build a Lab Notebook</h1>
 <table>
     <tr>

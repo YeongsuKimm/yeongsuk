@@ -42,6 +42,7 @@ Blogging in GitHub pages is a way to learn and code at the same time.
 
 <html>
     <head>
+        <!-- <link rel="stylesheet" href="theme.css"> -->
         <style>
             .note_button {
                 padding:9px 13px; 
@@ -80,3 +81,4 @@ Blogging in GitHub pages is a way to learn and code at the same time.
         </script>
     </body>
 </html>
+
