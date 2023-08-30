@@ -22,10 +22,10 @@ course: Games & Projects
                 /* padding: 30px 30px; */
                 transition-duration:0.4s;
                 /* position:relative; */
-                left:100px;
+                /* left:100px; */
                 font-size:30px;
                 color:white;
-                width:153px;
+                width:157px;
                 height:100px;
             }
             .cal_button:hover {
@@ -166,24 +166,17 @@ course: Games & Projects
 </html>
 <br><br>
 
+
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <style>
-        body {
+        /* body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-        }
-        .game-container {
             text-align: center;
-        }
+        } */
         .container {
             display: inline-grid;
             grid-template-columns: repeat(3, 100px);
@@ -202,9 +195,9 @@ course: Games & Projects
     </style>
 </head>
 <body>
-    <div class="game-container">
+    <div style="text-align:center"> 
         <h1>Tic Tac Toe</h1>
-        <div class="container" id="board">
+        <div class="container " id="board">
             <div class="cell" onclick="makeMove(0)"></div>
             <div class="cell" onclick="makeMove(1)"></div>
             <div class="cell" onclick="makeMove(2)"></div>
@@ -215,10 +208,53 @@ course: Games & Projects
             <div class="cell" onclick="makeMove(7)"></div>
             <div class="cell" onclick="makeMove(8)"></div>
         </div>
-        <p id="message"></p>
     </div>
+    <br><br><br><br>
+    <div id="message"></div>
     <script>
-        // Your JavaScript code here
+        let currentPlayer = 'X';
+        let board = ['', '', '', '', '', '', '', '', ''];
+        let gameActive = true;
+        const winningCombos = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+        function makeMove(cellIndex) {
+            if (gameActive && board[cellIndex] === '') {
+                board[cellIndex] = currentPlayer;
+                document.getElementById('board').children[cellIndex].textContent = currentPlayer;
+                if (checkWinner(currentPlayer)) {
+                    var note = document.createElement("h1");
+                    note.innerHTML = `Player ${currentPlayer} wins!`;
+                    var location = document.getElementById('message');
+                    var space = document.createElement("br")
+                    location.appendChild(space);
+                    location.appendChild(note);
+                    gameActive = false;
+                } else if (!board.includes('')) {
+                    document.getElementById('message').textContent = "It's a draw!";
+                    gameActive = false;
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                }
+            }
+        }
+        function checkWinner(player) {
+            for (const combo of winningCombos) {
+                if (combo.every(index => board[index] === player)) {
+                    return true;
+                }
+            }
+            return false;
+        }
     </script>
 </body>
 </html>
+
+
