@@ -20,7 +20,7 @@ Blogging in GitHub pages is a way to learn and code at the same time.
 <button class="button_above" onclick="window.location.href='https://app.slack.com/client/TUDAF53UJ/CUU064ACX';">Slack</button>
 
 <h2>About Me:</h2>
-<p style="float:right;clear:right;display:block;padding-right:500px"><img src="images/about_me.png" alt="about-me" style="width:220px;height:280px"></p>
+<p style="float:right;clear:right;display:block;text-align:right"><img src="images/about_me.png" alt="about-me" style="width:220px;height:280px"></p>
 <div>    
     <ol style="font-size:15px">
         <li>I was born in South Korea</li>
@@ -45,7 +45,7 @@ Blogging in GitHub pages is a way to learn and code at the same time.
         <style>
             .note_button {
                 padding:9px 13px; 
-                background-color:#af0011;
+                background-color:#93bd20;
                 transition-duration:0.4s;
                 border-radius:8px;
             }
@@ -72,7 +72,7 @@ Blogging in GitHub pages is a way to learn and code at the same time.
                 var note = document.createElement("li");
                 var item = prompt("Enter note item");
                 note.innerHTML = item;
-                console.log(note);
+                // console.log(note);
                 var location = document.getElementById("note");
                 // note.appendChild(document.createTextNode(item)); -- set item to note
                 location.appendChild(note);

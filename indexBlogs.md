@@ -59,10 +59,21 @@ title: Blogs
         Fix:
         <h4>Make new local server to save changes</h4>
     </li>
+    <br>
+    <li>The github page leads to incorrect base url
+        <br>
+        Fix:
+        <h4>Change the baseurl in _config.yml</h4>
+    </li>
+    <br>
+    <li>The error "You don't have write permissions for the /var/lib/gems/3.0.0 directory." after trying to install jekyll components
+        Fix:
+        <h4>Precede it with 'sudo'</h4>
+    </li>
 </ul>
 <h1>Ongoing Errors</h1>
 <ul>
-    <li>The github page leads to incorrect base url</li>
+    
 </ul>
 
 <!-- 

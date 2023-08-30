@@ -5,18 +5,19 @@ units: "1,2,3,4,5,6"
 course: Games & Projects
 ---
 <h1>Week 0 Projects</h1>
-<br><br><br>
-<h1>Week 1 Projects</h1>
 <div class="centered">
     <h1>The Notepad</h1>
     <h2>On the home page</h2>
 </div>
+<br><br><br>
+<h1>Week 1 Projects</h1>
+
 <br>
 <html>
     <head>
         <style>
             .cal_button {
-                background-color:#af0011;
+                background-color:#93bd20;
                 color: white;
                 border-radius:8px;
                 /* padding: 30px 30px; */
