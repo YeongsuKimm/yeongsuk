@@ -12,4 +12,4 @@ baseurl: "/student"
 plugins:
 - jekyll-remote-theme
 future: true
-remote_theme: slate
+theme: slate
