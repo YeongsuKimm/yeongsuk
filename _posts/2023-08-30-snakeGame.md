@@ -1,5 +1,5 @@
 ---
-toc: true
+# toc: true
 comments: false
 layout: default
 title: Snake Game
