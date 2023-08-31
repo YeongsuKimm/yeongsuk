@@ -39,7 +39,7 @@ courses: { compsci: {week: 0} }
                 height:100px;
             }
             .cal_button:hover {
-                background-color:black;
+                background-color:gray;
             }
             #display {
                 text-align:right;

@@ -45,26 +45,31 @@ Blogging in GitHub pages is a way to learn and code at the same time.
         <!-- <link rel="stylesheet" href="theme.css"> -->
         <style>
             .note_button {
+                color:white;
                 padding:9px 13px; 
                 background-color:#AF0011;
                 transition-duration:0.4s;
                 border-radius:8px;
             }
             .note_button:hover {
-                background-color:white;
+                background-color:gray;
+            }
+            .button_above:hover {
+                background-color:gray;
             }
             .button_above {
                 border:black;
+                transition-duration:0.4s;
                 width:210px;
                 height:50px;
                 border-radius:8px;
                 background-color:#AF0011;
-                font-weight:bold;
+                /* font-weight:bold; */
                 font-size:30px;
                 color:white;
                 text-shadow: 0 0 1px black, 0 0 3px black;
                 outline: solid black;
-                outline-width:2px;
+                outline-width:1px;
                 /* gap:100px; */
             }
         </style>
