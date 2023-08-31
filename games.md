@@ -16,7 +16,7 @@ courses: { compsci: {week: 0} }
 <h1>Week 0 Projects</h1>
 <div class="centered">
     <h1>The Notepad</h1>
-    <h2>On the home page</h2>
+    On the home page
 </div>
 <br><br><br>
 <h1>Week 1 Projects</h1>

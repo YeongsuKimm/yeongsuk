@@ -1,7 +1,7 @@
 ---
 toc: true
 comments: false
-layout: post
+layout: default
 title: Snake Game
 description: Snake Game
 type: hacks
