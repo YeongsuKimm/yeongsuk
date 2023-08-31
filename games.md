@@ -4,7 +4,7 @@ units: "1,2,3,4,5,6"
 course: Games & Projects
 # toc: true
 # comments: false
-layout: post
+layout: default
 title: Games & Projects
 # description: Games & Projects
 type: tangibles
@@ -26,7 +26,7 @@ courses: { compsci: {week: 0} }
     <head>
         <style>
             .cal_button {
-                background-color:#93bd20;
+                background-color:#AF0011;
                 color: white;
                 border-radius:8px;
                 /* padding: 30px 30px; */
