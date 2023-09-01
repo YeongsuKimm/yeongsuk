@@ -26,10 +26,10 @@ courses: { compsci: {week: 0} }
     <head>
         <style>
             .cal_button {
-                background-color:#AF0011;
+                background-color:black;
                 color: white;
                 border-radius:8px;
-                /* padding: 30px 30px; */
+                /* padding:20px; */
                 transition-duration:0.4s;
                 /* position:relative; */
                 /* left:100px; */
@@ -55,7 +55,7 @@ courses: { compsci: {week: 0} }
     <body>
         <div class="centered"> 
             <h1>Simple Calculator</h1>
-            <input type="text" id="display" disabled><br>
+            <input type="text" id="display" disabled><br><br>
             <button onclick="appendToDisplay('7')" class="cal_button">7</button>
             <button onclick="appendToDisplay('8')" class="cal_button">8</button>
             <button onclick="appendToDisplay('9')" class="cal_button">9</button>
