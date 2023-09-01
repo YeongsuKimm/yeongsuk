@@ -20,8 +20,8 @@ Blogging in GitHub pages is a way to learn and code at the same time.
 <button class="button_above" onclick="window.location.href='https://app.slack.com/client/TUDAF53UJ/CUU064ACX';">Slack</button>
 
 <h2>About Me:</h2>
-<p style="float:right;clear:right;display:block;text-align:right"><img src="images/about_me.png" alt="about-me" style="width:220px;height:280px"></p>
-<div>    
+<p style="float:center;clear:center;display:block;text-align:center"><img src="images/about_me.png" alt="about-me" style="width:80%"></p>
+<!-- <div>    
     <ol style="font-size:15px">
         <li>I was born in South Korea</li>
         <br>
@@ -33,7 +33,7 @@ Blogging in GitHub pages is a way to learn and code at the same time.
         <br>
         <li>I enjoy coding<br><img src="images/code.jpg" alt="codeImage" width="280" height="157"></li>
     </ol>
-</div>
+</div> -->
 <br><br><br>
 <button class="note_button" onclick="createItem()">Create a note</button>
 <h1>Notepad</h1>
@@ -47,7 +47,7 @@ Blogging in GitHub pages is a way to learn and code at the same time.
             .note_button {
                 color:white;
                 padding:9px 13px; 
-                background-color:black;
+                background-color:#36393F;
                 transition-duration:0.4s;
                 border-radius:8px;
             }
@@ -63,7 +63,7 @@ Blogging in GitHub pages is a way to learn and code at the same time.
                 width:210px;
                 height:50px;
                 border-radius:8px;
-                background-color:black;
+                background-color:#36393F;
                 /* font-weight:bold; */
                 font-size:30px;
                 color:white;

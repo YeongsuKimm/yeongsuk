@@ -26,7 +26,7 @@ courses: { compsci: {week: 0} }
     <head>
         <style>
             .cal_button {
-                background-color:black;
+                background-color:#36393F;
                 color: white;
                 border-radius:8px;
                 /* padding:20px; */
