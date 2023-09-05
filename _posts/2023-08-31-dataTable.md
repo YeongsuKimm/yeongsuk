@@ -4,7 +4,7 @@ comments: False
 layout: default
 title: JS output Table
 description: San Diego Padres stats table
-type: tangibles
+type: hacks
 courses: {'compsci': {'week': 2}}
 ---
 

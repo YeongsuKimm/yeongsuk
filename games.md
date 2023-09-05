@@ -7,7 +7,7 @@ course: Games & Projects
 layout: default
 title: Games & Projects
 # description: Games & Projects
-type: tangibles
+type: hacks
 courses: { compsci: {week: 0} }
 ---
 <head>
