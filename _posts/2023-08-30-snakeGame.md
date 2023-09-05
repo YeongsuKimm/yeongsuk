@@ -70,6 +70,11 @@ courses: { compsci: {week: 2} }
         background-color: #FFF;
         color: #000;
     }
+    
+    p.fs-4 {
+        position:static;
+        left:123px;
+    }
 </style>
 
 
