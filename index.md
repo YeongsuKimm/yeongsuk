@@ -41,7 +41,7 @@ Blogging in GitHub pages is a way to learn and code at the same time.
 </ol>
 
 <html>
-    <head>
+    <head>w
         <style>
             .note_button {
                 color:white;

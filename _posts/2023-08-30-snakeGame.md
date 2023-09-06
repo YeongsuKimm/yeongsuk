@@ -70,15 +70,10 @@ courses: { compsci: {week: 2} }
         background-color: #FFF;
         color: #000;
     }
-    
-    p.fs-4 {
-        position:static;
-        left:123px;
-    }
 </style>
 
 
-<div class="container">
+<div class="container" >
     <header class="pb-3 mb-4 border-bottom border-primary text-dark">
         <p class="fs-4">Snake score: <span id="score_value">0</span></p>
     </header>
@@ -284,7 +279,7 @@ courses: { compsci: {week: 2} }
                 activeDot(snake[i].x, snake[i].y);
             }
             // Paint food
-            activeDot(food.x, food.y);
+            activeDot(food.x, food.y, true);
             // Debug
             //document.getElementById("debug").innerHTML = snake_dir + " " + snake_next_dir + " " + snake[0].x + " " + snake[0].y;
             // Recursive call after speed delay, déjà vu
@@ -316,19 +311,19 @@ courses: { compsci: {week: 2} }
         let changeDir = function(key){
             // test key and switch direction
             switch(key) {
-                case 37:    // left arrow
+                case 37:case 65:    // left arrow
                     if (snake_dir !== 1)    // not right
                         snake_next_dir = 3; // then switch left
                     break;
-                case 38:    // up arrow
+                case 38:case 87:    // up arrow
                     if (snake_dir !== 2)    // not down
                         snake_next_dir = 0; // then switch up
                     break;
-                case 39:    // right arrow
+                case 39:case 68:    // right arrow
                     if (snake_dir !== 3)    // not left
                         snake_next_dir = 1; // then switch right
                     break;
-                case 40:    // down arrow
+                case 40:case 83:    // down arrow
                     if (snake_dir !== 0)    // not up
                         snake_next_dir = 2; // then switch down
                     break;
@@ -336,8 +331,12 @@ courses: { compsci: {week: 2} }
         }
         /* Dot for Food or Snake part */
         /////////////////////////////////////////////////////////////
-        let activeDot = function(x, y){
-            ctx.fillStyle = "#FFFFFF";
+        let activeDot = function(x, y, isFood=false){
+            if (isFood) {
+                ctx.fillStyle = "red"; // Change the color for the food
+            } else {
+                ctx.fillStyle = "white"; // Use the default color for the snake
+            }
             ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
         }
         /* Random food placement */
