@@ -37,11 +37,19 @@ Blogging in GitHub pages is a way to learn and code at the same time.
     </ol>
 </div> -->
 <br><br><br>
-<button class="note_button" onclick="createItem()">Create a note</button>
-<h1>Notepad</h1>
-<ol id="note">
-</ol>
+<form>
+    <input type="text" id="noteContent" placeholder="Enter Note Content" name="note">
+    <input type="submit" class="note_button" id="noteSubmit" placeholder="Enter Note Content" value="Sumit Note">
+</form>
+<br><br>
+<!-- <button class="note_button" onclick="createItem()">Create Note</button>
+<button class="note_button" onclick="clearList()">Clear Notepad</button> -->
 
+<div class="notepad">
+    <h1 style="color:white">Notepad</h1>
+    <ol id="note">
+    </ol>
+</div>
 <html>
     <head>
         <style>
@@ -73,20 +81,54 @@ Blogging in GitHub pages is a way to learn and code at the same time.
                 outline-width:1px;
                 /* gap:100px; */
             }
+            .notepad {
+                color:white;
+                background-color:#36393F;
+                padding:5px 25px 75px;
+                border-radius:25px;
+            }
         </style>
     </head>
     <body>
         <script>
-            function createItem()
-            {
-                var note = document.createElement("li");
-                var item = prompt("Enter note item");
-                note.innerHTML = item;
-                // console.log(note);
-                var location = document.getElementById("note");
-                // note.appendChild(document.createTextNode(item)); -- set item to note
-                location.appendChild(note);
+            function createItem() {
+                // Prompt the user for a note item
+                var item = document.getElementById("mySubmit").value;
+                // Ensure that the user entered something before proceeding
+                if (item !== null && item.trim() !== "") {
+                    // Create a new list item
+                    var note = document.createElement("li");
+                    note.innerHTML = item;
+                    // Append the list item to the DOM
+                    var location = document.getElementById("note");
+                    location.appendChild(note);
+                    // Save the note item to localStorage
+                    saveItemToLocalStorage(item);
+                }
             }
+            function saveItemToLocalStorage(item) {
+                // Retrieve the existing notes from localStorage (if any)
+                var existingNotes = JSON.parse(localStorage.getItem("notes")) || [];
+                // Add the new note to the array of notes
+                existingNotes.push(item);
+                // Save the updated array back to localStorage
+                localStorage.setItem("notes", JSON.stringify(existingNotes));
+            }
+            // Load saved notes from localStorage when the page loads
+            function loadNotes() {
+                var location = document.getElementById("note");
+                var existingNotes = JSON.parse(localStorage.getItem("notes")) || [];
+                existingNotes.forEach(function (item) {
+                    var note = document.createElement("li");
+                    note.innerHTML = item;
+                    location.appendChild(note);
+                });
+            }
+            function clearList() {
+                localStorage.removeItem("notes");
+            }
+            // Call loadNotes() when the page loads to populate existing notes
+            window.onload = loadNotes;
         </script>
     </body>
 </html>

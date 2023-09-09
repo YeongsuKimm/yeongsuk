@@ -266,9 +266,14 @@ courses: { compsci: {week: 0} }
     </script>
 </body>
 </html>
+<h1>Week 3 Projects</h1>
 <div class="centered">
-    <h1>Week 3 Projects</h1>
     <div style="font-size:200%">
-        <a onclick="CHESS/chess.html">Chess Game</a>
+        <a href="CHESS/chess.html">Chess Game</a>
+        <br><br><br>
     </div>
+    <h1>Updated To-Do List</h1>
+    On the Home page
 </div>
+
+
