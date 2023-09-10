@@ -8,7 +8,7 @@ layout: default
 title: Games & Projects
 # description: Games & Projects
 type: hacks
-courses: { compsci: {week: 0} }
+courses: { compsci: {week: 3} }
 ---
 <head>
     <link rel="stylesheet" href="theme.css">

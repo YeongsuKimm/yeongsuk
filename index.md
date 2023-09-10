@@ -37,13 +37,13 @@ Blogging in GitHub pages is a way to learn and code at the same time.
     </ol>
 </div> -->
 <br><br><br>
-<form>
+<!-- <form>
     <input type="text" id="noteContent" placeholder="Enter Note Content" name="note">
     <input type="submit" class="note_button" id="noteSubmit" placeholder="Enter Note Content" value="Sumit Note">
-</form>
+</form> -->
 <br><br>
-<!-- <button class="note_button" onclick="createItem()">Create Note</button>
-<button class="note_button" onclick="clearList()">Clear Notepad</button> -->
+<button class="note_button" onclick="createItem()">Create Note</button>
+<button class="note_button" onclick="clearList()">Clear Notepad</button>
 
 <div class="notepad">
     <h1 style="color:white">Notepad</h1>
@@ -93,7 +93,7 @@ Blogging in GitHub pages is a way to learn and code at the same time.
         <script>
             function createItem() {
                 // Prompt the user for a note item
-                var item = document.getElementById("mySubmit").value;
+                var item =  prompt("Enter a to-do item:")
                 // Ensure that the user entered something before proceeding
                 if (item !== null && item.trim() !== "") {
                     // Create a new list item
@@ -126,6 +126,8 @@ Blogging in GitHub pages is a way to learn and code at the same time.
             }
             function clearList() {
                 localStorage.removeItem("notes");
+                var location = document.getElementById("note");
+                location.innerHTML = "";
             }
             // Call loadNotes() when the page loads to populate existing notes
             window.onload = loadNotes;
