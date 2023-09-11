@@ -23,4 +23,4 @@ courses: {'compsci': {'week': 3}}
 > Week takeaways
 - Learned how to use python, javascript, and linux bash. (Also started experimenting with APIs and flask)
 - Learned how to navigate through github and vscode
-- Learned the different functionalities of different functions in vscode. 
+- Learned the different functionalities of different functions in vscode.
