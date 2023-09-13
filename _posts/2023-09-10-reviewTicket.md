@@ -8,15 +8,15 @@ courses: {'compsci': {'week': 3}}
 
 > Things Accomplished
 - Github Pages
-- The notepad function on the homepage
+- **The notepad function on the homepage**
 - Time box plans and tangibles (up to week 3)
-- Python Quiz Game
-- Game of Life & Snake Game
-- JS Calculator
-- Converter
+- **Python Quiz Game**
+- **Game of Life & Snake Game**
+- **JS Calculator (input keyboard)**
+- **Converter**
 - JS Output table
-- Wikipedia & Youtube
-- Chess Game
+- **Wikipedia & Youtube (vscode & localhost)**
+- **Chess Game**
 
 > Things Learned
 - Learned how to use python, javascript, and linux bash. (Also started experimenting with APIs and flask)
