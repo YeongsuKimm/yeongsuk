@@ -22,9 +22,12 @@ test_data = {
     # 19 : "",
     # 20 : "",
 }
-
+x = [];
+for i in range(26):
+    x.append(chr(97+i));
+print(x)
 def test1():
-    rand = random.randint(0,len(test_data)+1);
+    rand = random.randint(0,len(test_data)-t
     input("Press enter when you want to start\n >")
     print(test_data[rand]);
     start = time.perf_counter();
@@ -52,42 +55,40 @@ def test1():
         print("Accuracy: " + str(total/all*100)+ "%")
     except:
         pass;
-def test2():
-    words = [];
-    all = 0;
-    try:   
-        length = int(input("Enter number of words: "))
-    except:
-        print("Invalid type")
-        return;
-    r = random_word.RandomWords();
-    for i in range(length):
-        words.append(r.get_random_word);
-        print(r.get_random_word)
-    input("\nPress enter when you want to start\n >")
-    total = 0;
-    start = time.perf_counter();
-    # sentence = " ".join(words)
-    print(words)
-    result = input("TYPE:")
-    end = time.perf_counter();
-    totalTime = end - start;
-    print("Completed in " + str(totalTime) + " seconds");
-    if(len(words) > len(result)):
-        for i in range(len(result)):
-            if words[i] == result[i]:
-                total+=1;
-            all += 1;
-    else:
-        for i in range(len(words)):
-            if words[i] == result[i]:
-                total+=1;
-            all += 1;
-    try: 
-        print("Accuracy: " + str(total/all*100)+ "%")
-    except:
-        pass;
+# def test2():
+#     words = [];
+#     all = 0;
+#     try:   
+#         length = int(input("Enter number of words: "))
+#     except:
+#         print("Invalid type")
+#         return;
+#     r = random_word.RandomWords();
+#     for i in range(length):
+#         words.append(str(r.get_random_word));
+#         print(r.get_random_word)
+#     input("\nPress enter when you want to start\n >")
+#     total = 0;
+#     x = r.get_random_word;
+#     start = time.perf_counter();
+#     # sentence = " ".join(words)
+#     print(words)
+#     result = input("TYPE:")
+#     end = time.perf_counter();
+#     totalTime = end - start;
+#     print("Completed in " + str(totalTime) + " seconds");
+#     if(len(words) > len(result)):
+#         for i in range(len(result)):
+#             if words[i] == result[i]:
+#                 total+=1;
+#             all += 1;
+#     else:
+#         for i in range(len(words)):
+#             if words[i] == result[i]:
+#                 total+=1;
+#             all += 1;
+#     try: 
+#         print("Accuracy: " + str(total/all*100)+ "%")
+#     except:
+#         pass;
     
-test2();
-# x = ["1", "2", "3", "4"]
-# print(" ".join(x))
