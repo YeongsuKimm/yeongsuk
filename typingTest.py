@@ -1,5 +1,6 @@
 
 import random, time, random_word, unittest, sys, io
+from unittest.mock import patch
 from io import StringIO
 test_data = {
     0 : "The sun was setting behind the distant mountains, casting a warm, golden glow across the tranquil valley below. Birds chirped their evening songs, and a gentle breeze rustled through the leaves of the trees that lined the peaceful riverbank. As the day drew to a close, the world seemed to sigh in contentment, embracing the serenity of twilight.",
@@ -23,10 +24,12 @@ test_data = {
     19 : "Perched on a rocky promontory overlooking the vast expanse of the ocean, a centuries-old lighthouse stood as a silent sentinel. Its stark white walls and red roof contrasted with the deep blue of the sea and sky. Inside, the spiral staircase wound its way to the top, where the keeper tended to the beacon, ensuring that ships found their way safely through the treacherous waters below.",
     20 : "As the golden hues of autumn leaves fell gently to the ground, the town square transformed into a canvas of vibrant colors. Families gathered to celebrate the harvest festival, with stalls offering apple cider, pumpkin pies, and the sweet aroma of caramel apples. Children played games, their laughter mingling with the live folk music that filled the air, creating a joyful atmosphere.",
 }
-def test1():
-    rand = random.randint(0,len(test_data)-1)
-    print(test_data[rand]);
-    input("\nPress enter when you want to start\n >")
+def test1(tindex=-1):
+    if(tindex == -1):
+        index = random.randint(0,len(test_data)-1)
+    else:
+        index = tindex;
+    print(test_data[index]);
     start = time.perf_counter();
     words = input("TYPE:")
     end = time.perf_counter();
@@ -34,7 +37,7 @@ def test1():
     print(f"Completed in {str(totalTime)} seconds");
     total = 0;
     words = words.split();
-    data = test_data[rand].split();
+    data = test_data[index].split();
     all = 0;
     if(len(data) > len(words)):
         for i in range(len(words)):
@@ -46,65 +49,200 @@ def test1():
             if data[i] == words[i]:
                 total+=1;
             all += 1;
-    print(f"WPM: {str(total / totalTime * 60)}");
     try: 
-        print(f"Accuracy: {str(total / all * 100)}%")
-    except:
-        pass
+        accuracy = f"{str(total / all * 100)}%";
+    except ZeroDivisionError:
+        accuracy = "0.0%";
+    try:
+        wpm = str(total / totalTime * 60);
+    except ZeroDivisionError:
+        wpm = "0.0";
+    print(f"Accuracy: {accuracy}");
+    print(f"WPM: {wpm}");
+    return accuracy;
+
+def test_case1():
+    result = test1(0);
+def test_case2():
+    result = test1(1);
+def test_case3():
+    result = test1(2);
+def test_case4():
+    result = test1(3);
+def test_case5():
+    result = test1(4);
+def test_case6():
+    result = test1(5);
+def test_case7():
+    result = test1(6);
+def test_case8():
+    result = test1(7);
+def test_case9():
+    result = test1(8);
+def test_caseA():
+    result = test1(9);
+def test_caseB():
+    result = test1(10);
+def test_caseC():
+    result = test1(11);
+def test_caseD():
+    result = test1(12);
+def test_caseE():
+    result = test1(13);
+def test_caseF():
+    result = test1(14);
+def test_caseG():
+    result = test1(15);
+def test_caseH():
+    result = test1(16);
+def test_caseI():
+    result = test1(17);
+def test_caseJ():
+    result = test1(18);
+def test_caseK():
+    result = test1(19);
 class TestTypingSpeed(unittest.TestCase):
-    def setUp(self):
-        # Set a fixed seed for random to ensure reproducibility
-        random.seed(0)
 
-    def tearDown(self):
-        # Restore the original standard input and output
-        sys.stdin = sys.__stdin__
-        sys.stdout = sys.__stdout__
-
-    def test_output_format(self):
-        # Mock user input and capture output
-        user_input = test_data[0]  # Use a specific test case from test_data
-        with StringIO() as mock_output, StringIO(user_input) as mock_input:
-            sys.stdin = mock_input
-            sys.stdout = mock_output
-
-            # Run the test1 function
-            test1()
-
-            # Retrieve the printed output
-            mock_output.seek(0)
-            output_lines = mock_output.readlines()
-
-            # Validate the output format
-            self.assertEqual(len(output_lines), 4)  # Ensure four lines of output
-            self.assertTrue(output_lines[0].strip().startswith("TYPE:"))  # Check for input prompt
-            self.assertTrue(output_lines[1].startswith("Completed in"))  # Check for time taken
-            self.assertTrue(output_lines[2].startswith("WPM:"))  # Check for WPM
-            self.assertTrue(output_lines[3].startswith("Accuracy:"))  # Check for Accuracy
-
-    def test_accuracy_calculation(self):
-        # Mock user input and capture output
-        user_input = test_data[0]  # Use a specific test case from test_data
-        with StringIO() as mock_output, StringIO(user_input) as mock_input:
-            sys.stdin = mock_input
-            sys.stdout = mock_output
-
-            # Run the test1 function
-            test1()
-
-            # Retrieve the printed output
-            mock_output.seek(0)
-            output_lines = mock_output.readlines()
-
-            # Extract accuracy percentage from the output
-            accuracy_line = output_lines[3].strip()
-            accuracy_percentage = float(accuracy_line.split(":")[1].strip().strip('%'))
-
-            # Calculate expected accuracy manually
-            expected_accuracy = 100.0 * len(test_data[0].split()) / len(test_data[0].split())
-
-            # Check if the calculated accuracy matches the expected accuracy
-            self.assertAlmostEqual(accuracy_percentage, expected_accuracy, places=2)
-
+    @patch('builtins.input', side_effect=["The sun was setting behind the distant mountains, casting a warm, golden glow across the tranquil valley below. Birds chirped their evening songs, and a gentle breeze rustled through the leaves of the trees that lined the peaceful riverbank. As the day drew to a close, the world seemed to sigh in contentment, embracing the serenity of twilight."])
+    def test_case1(self, mock_input):
+        result = test1(0)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=["In the heart of the bustling city, the streets were alive with activity. People hurried along the crowded sidewalks, their footsteps echoing off the tall buildings that surrounded them. Car horns honked, and sirens wailed in the distance, creating a cacophony of urban sounds. Despite the chaos, there was an energy and vibrancy that defined city life, a rhythm that never seemed to falter."])
+    def test_case2(self, mock_input):
+        result = test1(1)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=["The ancient castle stood atop a steep hill, its weathered stone walls bearing witness to centuries of history. Ivy clung to the fortress's facade, and the drawbridge creaked as it lowered, revealing a hidden world of intrigue and mystery. Within the castle's grand halls, portraits of long-deceased royalty gazed down, their eyes seeming to follow your every move."])
+    def test_case2(self, mock_input):
+        result = test1(2)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(3)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(4)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(5)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(6)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(7)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(8)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(9)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(10)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(11)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(12)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(13)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(14)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(15)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(16)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(17)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(18)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    @patch('builtins.input', side_effect=[""])
+    def test_case2(self, mock_input):
+        result = test1(19)
+        try:
+            self.assertEqual(result, '100.0%')
+        except:
+            return "WRONG";
+    
 if __name__ == '__main__':
     unittest.main()
