@@ -1,4 +1,6 @@
-import random, time, random_word, unittest
+
+import random, time, random_word, unittest, sys, io
+from io import StringIO
 test_data = {
     0 : "The sun was setting behind the distant mountains, casting a warm, golden glow across the tranquil valley below. Birds chirped their evening songs, and a gentle breeze rustled through the leaves of the trees that lined the peaceful riverbank. As the day drew to a close, the world seemed to sigh in contentment, embracing the serenity of twilight.",
     1 : "In the heart of the bustling city, the streets were alive with activity. People hurried along the crowded sidewalks, their footsteps echoing off the tall buildings that surrounded them. Car horns honked, and sirens wailed in the distance, creating a cacophony of urban sounds. Despite the chaos, there was an energy and vibrancy that defined city life, a rhythm that never seemed to falter.",
@@ -29,7 +31,7 @@ def test1():
     words = input("TYPE:")
     end = time.perf_counter();
     totalTime = end - start;
-    print("Completed in " + str(totalTime) + " seconds");
+    print(f"Completed in {str(totalTime)} seconds");
     total = 0;
     words = words.split();
     data = test_data[rand].split();
@@ -44,10 +46,65 @@ def test1():
             if data[i] == words[i]:
                 total+=1;
             all += 1;
-    print("WPM: " + str(total/(totalTime)*60));
+    print(f"WPM: {str(total / totalTime * 60)}");
     try: 
-        print("Accuracy: " + str(total/all*100)+ "%")
+        print(f"Accuracy: {str(total / all * 100)}%")
     except:
-        pass;
+        pass
+class TestTypingSpeed(unittest.TestCase):
+    def setUp(self):
+        # Set a fixed seed for random to ensure reproducibility
+        random.seed(0)
 
-test1();
+    def tearDown(self):
+        # Restore the original standard input and output
+        sys.stdin = sys.__stdin__
+        sys.stdout = sys.__stdout__
+
+    def test_output_format(self):
+        # Mock user input and capture output
+        user_input = test_data[0]  # Use a specific test case from test_data
+        with StringIO() as mock_output, StringIO(user_input) as mock_input:
+            sys.stdin = mock_input
+            sys.stdout = mock_output
+
+            # Run the test1 function
+            test1()
+
+            # Retrieve the printed output
+            mock_output.seek(0)
+            output_lines = mock_output.readlines()
+
+            # Validate the output format
+            self.assertEqual(len(output_lines), 4)  # Ensure four lines of output
+            self.assertTrue(output_lines[0].strip().startswith("TYPE:"))  # Check for input prompt
+            self.assertTrue(output_lines[1].startswith("Completed in"))  # Check for time taken
+            self.assertTrue(output_lines[2].startswith("WPM:"))  # Check for WPM
+            self.assertTrue(output_lines[3].startswith("Accuracy:"))  # Check for Accuracy
+
+    def test_accuracy_calculation(self):
+        # Mock user input and capture output
+        user_input = test_data[0]  # Use a specific test case from test_data
+        with StringIO() as mock_output, StringIO(user_input) as mock_input:
+            sys.stdin = mock_input
+            sys.stdout = mock_output
+
+            # Run the test1 function
+            test1()
+
+            # Retrieve the printed output
+            mock_output.seek(0)
+            output_lines = mock_output.readlines()
+
+            # Extract accuracy percentage from the output
+            accuracy_line = output_lines[3].strip()
+            accuracy_percentage = float(accuracy_line.split(":")[1].strip().strip('%'))
+
+            # Calculate expected accuracy manually
+            expected_accuracy = 100.0 * len(test_data[0].split()) / len(test_data[0].split())
+
+            # Check if the calculated accuracy matches the expected accuracy
+            self.assertAlmostEqual(accuracy_percentage, expected_accuracy, places=2)
+
+if __name__ == '__main__':
+    unittest.main()
