@@ -1,3 +1,3 @@
 from PIL import Image
 
-image = Image.  
+image = Image.  k
