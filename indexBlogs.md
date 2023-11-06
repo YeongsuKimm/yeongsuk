@@ -58,6 +58,14 @@ talk about the constant post
 </ul>
 <h1>Ongoing Errors</h1>
 N/A
+
+
+<h1>Team Teach</h1>
+- Worked on the lectures covering functions and classes
+- Since I less familiar to OOP, I was able to teach myself and learn a lot about OOP and how this new concept applies to my projects.
+- I worked on the parts of the lecture covering the popcorn hacks, the classes, and the hw.
+- The part I taught was the classes and how they work. (How is it useful in everyday coding/ what is the purpose?)
+
 <h1>PSEUDO CODE FOR PROJECTS</h1>
 
 > <b>Creating board replica</b><br>
