@@ -208,11 +208,16 @@ Takes longer based no network
 <h1>Homework:</h1>
 <pre>
   Question 1: What is parallel computing?
+  Parallel computing is a type of computation in which multiple calculations and processes are carried out simultaneously. These calculations are divided into smaller parts in which they are carried out at the same time. 
   Question 2: If there is a computer with 3 cores that can each take one task, and the tasks are 25ms, 632ms and 100ms in run time respectively, how long will the program take to run?
-  Question 3: Is sequential or parallel computing more efficient, and why?
+  It will take 632 ms because that is the longest time it takes out of the 3 cores.
+  Question 3: Is sequential or parallel computing more efficient, and why?. 
+  Parallel computing involves breaking down a large task into smaller subtasks that can be executed simultaneously on multiple processors or cores. This can lead to significant time savings and improved efficiency compared to executing tasks sequentially.
   Question 4: What is the term called when a network has multiple paths leading up to one destination? (Used in fault-tolerant systems)
   <img src="../assets\images\ftolhw.png">
+  Redundancy is where multiple paths lead to one destination. In fault-tolerant systems, if one path or component fails, data or traffic can be rerouted through alternative paths, helping to ensure continuous operation and minimizing the impact of failures. 
   Question 5: Using the image above, is this fault tolerant?
+  Image doesn't work.
 </pre>
   <footer class="footing">
     

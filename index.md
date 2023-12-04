@@ -3,7 +3,7 @@ layout: default
 title: Student Blog
 
 ---
-
+<a href="_posts/2023-11-27-Internet.md"><a>
 
 
 <!-- ## Overview of Hacks, Study and Tangibles
