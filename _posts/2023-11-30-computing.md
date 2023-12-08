@@ -217,7 +217,6 @@ Takes longer based no network
   <img src="../assets\images\ftolhw.png">
   Redundancy is where multiple paths lead to one destination. In fault-tolerant systems, if one path or component fails, data or traffic can be rerouted through alternative paths, helping to ensure continuous operation and minimizing the impact of failures. 
   Question 5: Using the image above, is this fault tolerant?
-  Image doesn't work.
 </pre>
   <footer class="footing">
     
