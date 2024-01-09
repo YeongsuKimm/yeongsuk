@@ -10,7 +10,7 @@ talk about the constant post
 41620e1459cb3a3e111f025372111c8d6964bd6b (update board chess)<br>
 2772b68255833571d564186479f3a671b367d52a (chat and navbar changes with progress on chess int)<br>
 </p>
-<a href="_notebooks/2023-11-29-Legalandethicalconcerns.md">hello</a>
+<a href="Legalandethicalconcerns.md">hello</a>
 <h1>TRIMESTER 1 REFLECTION</h1>
 - I started to become more familiar with using vscode or github. I think this type of collaborative way of working will be essential in future coding experiences.
 - Overall, the largest part of my takeaway from this trimester is how to work with other to collaborate and produce a product or result that is satisfactory of our original vision. This will definitely be essential in my future 
