@@ -1,0 +1,6 @@
+[{'id': 1, 'name': 'Thomas Edison', 'uid': 'toby', 'dob': '02-11-1847', 'age': 176}, 
+{'id': 2, 'name': 'Nikola Tesla', 'uid': 'niko', 'dob': '01-29-2024', 'age': 0}, 
+{'id': 3, 'name': 'Alexander Graham Bell', 'uid': 'lex', 'dob': '01-29-2024', 'age': 0}, 
+{'id': 4, 'name': 'Eli Whitney', 'uid': 'whit', 'dob': '01-29-2024', 'age': 0}, 
+{'id': 5, 'name': 'Indiana Jones', 'uid': 'indi', 'dob': '10-21-1920', 'age': 103},
+{'id': 6, 'name': 'Marion Ravenwood', 'uid': 'raven', 'dob': '10-21-1921', 'age': 102}]

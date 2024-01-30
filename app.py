@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, flash, request, session, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 # Setup of key Flask object (app)
@@ -272,19 +272,39 @@ print(read())
 
 @app.route('/')
 def home():
+    session["login"] = "false"
     return render_template('home.html')
     
-@app.route('/login')
+@app.route('/login', methods=["GET", "POST"])
 def login():
-    return render_template('login.html')
+    if request.method == "GET":
+        session['login'] = "false";
+        return render_template('login.html')
+    if request.method == "POST":
+        uid = request.form["uid"]
+        password = request.form["password"]
+        if(find_by_uid(uid)) == None:
+            flash("Incorrect username")
+            return render_template("login.html")
+        else:
+            if(check_credentials(uid,password)):
+                session['login'] = "true"
+                return redirect("/usersDB")
+            else:
+                flash("password incorrect")
+                return render_template("login.html")
 
 @app.route('/usersDB')
 def show_users():
+    if(session["login"] != "true"):
+        return render_template("403.html")
     users_data = read()
     return render_template('users.html', users=users_data)
 
 @app.route('/clearDB')
 def clear_db():
+    if(session["login"] != "true"):
+        return render_template("403.html")
     clearDB()
     return "DATABASE SUCCESSFULLY CLEARED"
 
