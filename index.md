@@ -22,7 +22,7 @@ Blogging in GitHub pages is a way to learn and code at the same time.
 <button class="button_above" onclick="window.location.href='https://app.slack.com/client/TUDAF53UJ/CUU064ACX';">Slack</button>
 
 <h2>About Me:</h2>
-<p style="float:center;clear:center;display:block;text-align:center"><img src="images/about_me.png" alt="about-me" style="width:80%"></p>
+<!-- <p style="float:center;clear:center;display:block;text-align:center"><img src="images/about_me.png" alt="about-me" style="width:80%"></p> -->
 <!-- <div>    
     <ol style="font-size:15px">
         <li>I was born in South Korea</li>
