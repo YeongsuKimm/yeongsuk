@@ -24,3 +24,13 @@ Unit5:
   description:
   start: 16
   end: 19
+Unit6:
+  title: Data Science
+  description:
+  start: 20
+  end: 23
+Unit7:
+  title: Data Science
+  description:
+  start: 24
+  end: 27
