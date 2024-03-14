@@ -11,26 +11,26 @@ Unit2:
   end: 7
 Unit3:
   title: Passion Project
-  description:
+  description: ^
   start: 8
   end: 11
 Unit4:
   title: CPT
-  description:
+  description: ^
   start: 12
   end: 15
 Unit5:
   title: CPT
-  description:
+  description: ^
   start: 16
   end: 19
 Unit6:
   title: Data Science
-  description:
+  description: ^
   start: 20
   end: 23
 Unit7:
   title: Data Science
-  description:
+  description: ^
   start: 24
   end: 27
